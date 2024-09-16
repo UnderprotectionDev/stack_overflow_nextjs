@@ -5,5 +5,11 @@
     "plugin:tailwindcss/recommended",
     "prettier",
     "next/typescript"
-  ]
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/enforces-shorthand": "warn",
+    "tailwindcss/no-custom-classname": "warn"
+  }
 }
