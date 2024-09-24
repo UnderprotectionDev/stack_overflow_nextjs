@@ -44,9 +44,7 @@ export async function updateUser(params: UpdateUserParams) {
 
     const { clerkId, updateData, path } = params;
 
-    await User.findOneAndUpdate({ clerkId }, updateData, {
-      new: true,
-    });
+    await User.findOneAndUpdate({ clerkId }, updateData, { new: true });
 
     revalidatePath(path);
   } catch (error) {
