@@ -152,7 +152,7 @@ export async function getSavedQuestions(params: GetSavedQuestionsParams) {
       },
       populate: [
         { path: "tags", model: Tag, select: "_id name" },
-        { path: "author", model: User, select: "_id name" },
+        { path: "author", model: User, select: "_id name picture" },
       ],
     });
 
