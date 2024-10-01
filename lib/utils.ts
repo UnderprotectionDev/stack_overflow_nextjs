@@ -43,3 +43,28 @@ export const formatandDivideNumber = (num: number): string => {
     return num.toString(); // For smaller numbers, return as-is
   }
 };
+
+export const getJoinedDate = (date: Date): string => {
+  // Create an array of month names
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  // Get the month (0-based index, so we need to add 1) and year
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  // Return the month and year as a string
+  return `${month} ${year}`;
+};
