@@ -17,6 +17,7 @@ import { revalidatePath } from "next/cache";
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
 import Answer from "@/database/answer.model";
+import { clerkClient } from "@clerk/nextjs/server";
 
 export async function getUserById(params: any) {
   try {
@@ -52,6 +53,7 @@ export async function updateUser(params: UpdateUserParams) {
     const { clerkId, updateData, path } = params;
 
     await User.findOneAndUpdate({ clerkId }, updateData, { new: true });
+    await clerkClient.users.updateUser(clerkId, updateData);
 
     revalidatePath(path);
   } catch (error) {
