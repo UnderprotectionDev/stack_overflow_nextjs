@@ -46,6 +46,7 @@ const QuestionCard = ({
             </h3>
           </Link>
         </div>
+        {/* If signed in add edit delete action */}
       </div>
       <div className="mt-3.5 flex flex-wrap gap-2">
         {tags.map((tag) => (

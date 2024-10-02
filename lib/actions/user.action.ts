@@ -220,7 +220,7 @@ export async function getUserAnswers(params: GetUserStatsParams) {
     const totalAnswers = await Answer.countDocuments({ author: userId });
     const userAnswer = await Answer.find({ author: userId })
       .sort({ upvotes: -1 })
-      .populate("question", "_id name")
+      .populate("question", "_id title")
       .populate("author", "_id clerkId name picture");
 
     return { totalAnswers, answers: userAnswer };

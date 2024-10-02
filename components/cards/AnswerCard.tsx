@@ -3,6 +3,7 @@ import Link from "next/link";
 import Metric from "../shared/Metric";
 import { formatandDivideNumber, getTimestamp } from "@/lib/utils";
 import { SignedIn } from "@clerk/nextjs";
+// import EditDeleteAction from "../shared/EditDeleteAction";
 
 interface Props {
   clerkId?: string | null;
@@ -33,7 +34,7 @@ const AnswerCard = ({
 
   return (
     <Link
-      href={`/question/${question?._id}/#${_id}`}
+      href={`/question/${question._id}/#${_id}`}
       className="card-wrapper rounded-[10px] px-11 py-9"
     >
       <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row">

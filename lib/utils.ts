@@ -6,6 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getTimestamp = (createdAt: Date): string => {
+  if (!createdAt) {
+    return "Unknown time";
+  }
   const now = new Date();
   const diff = now.getTime() - createdAt.getTime();
 
