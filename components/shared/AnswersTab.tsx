@@ -1,6 +1,7 @@
 import { getUserAnswers } from "@/lib/actions/user.action";
 import { SearchParamsProps } from "@/types";
 import AnswerCard from "../cards/AnswerCard";
+import React from "react";
 
 interface Props extends SearchParamsProps {
   userId: string;
