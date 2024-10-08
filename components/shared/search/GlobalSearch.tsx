@@ -45,12 +45,12 @@ const GlobalSearch = () => {
 
         router.push(newUrl, { scroll: false });
       } else {
-        if (query) {
-          const newUrl = removeKeysFromQuery({
-            params: searchParams.toString(),
-            keysToRemove: ["global", "type"],
-          });
+        const newUrl = removeKeysFromQuery({
+          params: searchParams.toString(),
+          keysToRemove: ["global", "type"],
+        });
 
+        if (!search) {
           router.push(newUrl, { scroll: false });
         }
       }

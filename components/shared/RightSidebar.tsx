@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { title } from "process";
 import React from "react";
 import RenderTag from "./RenderTag";
-import { getHotQuestions } from "@/lib/actions/user.action";
 import { getTopPopularTags } from "@/lib/actions/tag.action";
+import { getHotQuestions } from "@/lib/actions/question.action";
 
 const RightSidebar = async () => {
   const hotQuestions = await getHotQuestions();
